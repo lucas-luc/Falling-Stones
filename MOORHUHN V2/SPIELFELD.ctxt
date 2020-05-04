@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=SPIELFELD
+comment1.params=
+comment1.target=SPIELFELD()
+comment2.params=
+comment2.target=void\ Aimbot()
+comment3.params=
+comment3.target=void\ NewGame()
+comment4.params=
+comment4.target=void\ bewegen()
+comment5.params=
+comment5.target=void\ schuss()
+comment6.params=ID
+comment6.target=void\ tuWas(int)
+comment7.params=args
+comment7.target=void\ main(java.lang.String[])
+comment8.params=rueckgabe
+comment8.target=void\ tastenAktion(java.lang.String)
+numComments=9

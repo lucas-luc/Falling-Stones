@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=baum
+comment1.params=
+comment1.target=baum()
+comment2.params=X\ Y
+comment2.target=void\ setzePosition(int,\ int)
+numComments=3
