@@ -1,0 +1,36 @@
+#BlueJ class context
+comment0.target=Tastatur
+comment0.text=\r\n\ <h1>Tastatur</h1>\r\n\ Klasse\ fuer\ die\ Tastatureingabe.<br/>\r\n\ \r\n\ Nach\ dem\ Sun-Tutorial\ "How\ to\ Use\ Key\ Bindings"<br/>\r\n\ http\://java.sun.com/docs/books/tutorial/uiswing/misc/keybinding.html<br/><br/>\r\n\ \r\n\ <h2>Konstruktor</h2>\r\n\ <ul>\r\n\ <li>\ Anmelden\ beim\ Programmfenster\ \:public\ Tastatur()\ </li>\r\n\ <li>\ Anmelden\ bei\ der\ Komponente\ ziel\:\ public\ Tastatur(JComponent\ ziel,\ boolean\ global)<br/>\r\n\ \ \ wenn\ der\ Parameter\ <b>global\=false</b>\ ist\ <br/>\r\n\ Die\ Tastatur\ reagiert\ nur\ dann\ auf\ Tastendr&uuml;cke,\ wenn\ das\ <b>ziel</b>\ den\ Fokus\ hat.</li>\r\n\ </ul>\r\n\ \r\n\ \ Ist\ der\ Kommunikationslink\ gesetzt,\ meldet\ das\ Objekt\ den\ Tastendruck.\ <br/>\r\n\ \ <br/>\r\n\ \ Das\ Link-Objekt\ implementiert\ <b><a\ href\="ITastatur.html">ITastatur</a></b>\ \!\ <br/>\ \r\n\ \ Es\ muss\ die\ Methode\ <b>public\ void\ tastenAktion(String\ rueckgabe)</b>\ implementieren\ \r\n\ \ \r\n\ \ <br/>\r\n\ \ <br/>\r\n\ \r\n\ <h2>Anmelden\ einer\ Taste\:\ meldeAnTaste(...);</h2>\r\n\ <ul>\r\n\ <li>\tAnmelden\ eines\ Zeichens\:\ meldeAnTaste(char\ c,\ String\ rueckgabe)\ <br\ />\r\n\ Beispiel\:<br/>\r\n\ taste.meldeAnTaste('E',\ String\ "E");\ //\ Grobuchstabe\ E\ <br/>\r\n\ </li>\r\n\ <li>\ Anmelden\ einer\ Zeichenkette\ \:meldeAnTaste(String\ s,\ String\ rueckgabe)<br/>\r\n\ Die\ Zeichenkette\ beschreibt\ das\ Zeichen,\ auf\ das\ die\ Tastatur\ reagieren\ soll.<br/>\ \r\n\ Beispiele\:<br/>\r\n\ taste.meldeAnTaste("E",\ String\ "E");\ //\ Gro\uFFFDbuchstabe\ E\ <br/>\r\n\ taste.meldeAnTaste("HOME",\ String\ "E");\ //\ Die\ Taste\ Home-Pos1\ <br/>\r\n\ taste.meldeAnTaste("released\ A",\ String\ "E");\ //\ Die\ Taste\ A\ loslassen<br/>\r\n\ taste.meldeAnTaste("alt\ X",\ String\ "E");\ //\ Die\ Tastenkombination\ ALT+A<br/>\r\n\ taste.meldeAnTaste("ctrl\ SPACE",\ String\ "E");\ //\ Die\ Tastenkombination\ STRG+Leertaste<br/>\r\n\ taste.meldeAnTaste("alt\ ctrl\ released\ Q",\ String\ "E");\ //\ Die\ Tastenkombination\ ALT+STRG+Q\ beim\ Loslassen<br/>\r\n\ <hr>\r\n\ Aus\ der\ Klasse\ KeyStroke\:<br/>\r\n\ Parses\ a\ string\ s\ .\ The\ string\ must\ have\ the\ following\ syntax\:<br/>\r\n\ <br/>\r\n\ <b>&lt;modifiers&gt;*\ (&lt;typedID&gt;\ |\ &lt;pressedReleasedID&gt;)</b/><br/>\r\n\ modifiers\ \:\=\ shift\ |\ control\ |\ ctrl\ |\ meta\ |\ alt\ |\ altGraph<br/>\r\n\ typedID\ \:\=\ typed\ &lt;TypedKey&gt;<br/>\r\n\ typedKey\ \:\=\ string\ of\ length\ 1\ giving\ Unicode\ character.<br/>\r\n\ pressedReleasedID\ \:\=\ (pressed\ |\ released)\ key<br/>\r\n\ <br/>\r\n\ key\ \:\=\ KeyEvent\ key\ code\ name,\ i.e.\ the\ name\ following\ "VK_".<br/><br/>\r\n\ <b>Eine\ Auswahl\ der\ KeyCodes</b><br/>\r\n\ \r\n\ Symbolischer\ Name\ Bedeutung\ VK_0\ ...\ VK_9\ 0\ ...\ 9\ VK_A\ ...\ VK_Z\ A\ ...\ Z<br/>\r\n\ VK_ENTER\ Enter\ VK_SPACE\ Leertaste\ VK_TAB\ Tabulator\ VK_ESCAPE\ Escape<br/>\r\n\ VK_BACK_SPACE\ Rueckschritt\ VK_F1\ ...\ VK_F12\ Die\ Funktionstasten\ F1\ ...\ F12<br/>\r\n\ VK_HOME,\ VK_END\ Home,\ End\ VK_INSERT,\ VK_DELETE\ Einfg,\ Entf\ VK_PAGE_UP,<br/>\r\n\ VK_PAGE_DOWN\ BildHoch,\ BildRunter\ VK_DOWN,\ VK_UP\ CursorHoch,\ CursorRunter<br/>\r\n\ VK_LEFT,\ VK_RIGHT\ CursorLinks,\ CursorRechts<br/>\r\n\ <br/>\r\n\ VK_ALT\ ALT-Taste\ VK_ALT_GRAPH\ AltGR-Taste\ VK_CAPS_LOCK\ Caps-Lock-Taste<br/>\r\n\ VK_CONTROL\ Steuerungstaste\ VK_NUM_LOCK\ Numlock-Taste\ VK_KP_UP,VK_KP_DOWN<br/>\r\n\ Tasten\ auf\ dem\ Ziffernblock\ VK_KP_LEFT,VK_KP_RIGHT\ VK_NUMPAD0\ ...\ VK_NUMPAD9<br/>\r\n\ <br/>\r\n\ VK_PAUSE\ VK_PRINTSCREEN\ VK_SCROLL_LOCK\ VK_WINDOWS<br/>\r\n\ <hr>\r\n\ </li>\r\n\ <li>\ <b>tstRichtung,\ tstAbisZ,\ tstaBISz,\ tstZiffern</b>\ melden\ ganze\ Tastenbl&oumlcke\ an.\ \r\n\ \ \r\n\ </li>\r\n\ </ul>\r\n\ <br/>\r\n\ Der\ Parameter\ <b>rueckgabe</b>\ identifiziert\ die\ Taste.\ Gleichzeitig\ ist\ es\ der\ Wert,\ der\ beim\r\n\ Aufruf\ von\ tastenAktion\ uebergeben\ wird.\ Verschiedene\ Tasten\ koennen\ den\r\n\ gleichen\ Rueckgabewert\ haben.\ <br/>\r\n\ Der\ Rueckgabewert\ ist\ ein\ immer\ String.\ Vergleichen\ <b>NICHT</b>\ mit\ \=\=\ sondern\ mit\ <b>equals</b>.\ <br/>\r\n\ <br/>\ \ \r\n\ Durch\ folgende\ Methode\ kann\ der\ Tastenwert\ auch\ ohne\ Kommunikation\ ausgewertet\ werden.<br/>\r\n\ leseTaste()<br/>\r\n\ leseTaste\ setzt\ den\ R&uuml;ckgabestring\ auf\ null.\ null\ signalisiert\ als\ <b>keine\ Taste</b>\r\n\ \r\n\ <hr>\r\n\ <b>\ Hinweis\:</b>\ Ein\ Programm\ kann\ mehrere\ Objekte\ vom\ Typ\ Tastatur\ besitzen,\ die\ z.B.\ an\ verschiedne\ Stellen\ im\ Programm\ melden.\r\n\ <hr>\ \ \r\n\ \r\n\ @author\ Witt\r\n\ \r\n
+comment1.params=rueckgabe
+comment1.target=void\ tastenAktion(java.lang.String)
+comment10.params=
+comment10.target=void\ tstRichtung()
+comment10.text=\r\n\ Meldet\ die\ Richtungstasten\ an\r\n
+comment11.params=tastatur
+comment11.target=void\ tstAbisZ(Tastatur)
+comment11.text=\r\n\ Meldet\ alle\ Gro\uFFFDbuchstaben\ an<br\ />\r\n\ Vorsicht\ bei\ anderen\ Zeichens&auml;tzen\ bei\ Umlauten\r\n
+comment12.params=
+comment12.target=void\ tstaBISz()
+comment12.text=\r\n\ Meldet\ alle\ Kleinen\ Buchstaben\ an<br\ />\r\n\ Vorsicht\ bei\ anderen\ Zeichens&auml;tzen\ bei\ Umlauten\r\n
+comment13.params=
+comment13.target=void\ tstZiffern()
+comment13.text=\r\n\ Meldet\ Ziffern\ an\r\n
+comment2.params=
+comment2.target=Tastatur()
+comment2.text=\r\n\ Meldet\ die\ Tastatur\ beim\ Programmfenster\ an\r\n
+comment3.params=ziel\ global
+comment3.target=Tastatur(javax.swing.JComponent,\ boolean)
+comment3.text=\r\n\ Meldet\ die\ Tastatur\ bei\ der\ Komponente\ und\ nicht\ beim\ Programmfenster\ an,\ wenn\ der\ Parameter\ <b>global\=false</b>\ ist<br>\r\n\ \r\n\ Die\ Tastatur\ reagiert\ nur\ dann\ auf\ Tastendr&uuml;ecke,\ wenn\ das\ <b>ziel</b>\ den\ Fokus\ hat.\r\n\ \ \t\r\n\ @param\ ziel\r\n\ @param\ global\r\n
+comment4.params=link
+comment4.target=void\ setzeLink(ITastatur)
+comment5.params=c\ rueckgabe
+comment5.target=void\ meldeAnTaste(char,\ java.lang.String)
+comment6.params=s\ rueckgabe
+comment6.target=void\ meldeAnTaste(java.lang.String,\ java.lang.String)
+comment7.params=rueckgabe
+comment7.target=void\ rueckgabe(java.lang.String)
+comment8.params=
+comment8.target=void\ run()
+comment9.params=
+comment9.target=java.lang.String\ leseTaste()
+numComments=14

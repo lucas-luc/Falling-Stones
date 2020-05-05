@@ -97,6 +97,18 @@ public class StaticTools {
 			tColor = new Color(139,69,19);
 		}else if (farbname.equals("dunkelgruen")){
                         tColor= new Color(0,153,0);
+                }else if (farbname.equals("haut")){
+                        tColor= new Color(255,229,204);
+                }else if (farbname.equals("cargo")){
+                        tColor= new Color(210,180,140);
+                }else if (farbname.equals("olivgruen")){
+                        tColor= new Color(128,128,0);
+                }else if (farbname.equals("nasenhaut")){
+                        tColor= new Color(255,218,185);
+                }else if (farbname.equals("mundfarbe")){
+                        tColor= new Color(240,128,128);
+                }else if (farbname.equals("mundlinie")){
+                        tColor= new Color(250,128,114);
                     }
 		  
 		return tColor;
